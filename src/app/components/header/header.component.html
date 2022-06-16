@@ -1,0 +1,36 @@
+
+
+<br/>
+
+<section class="bg-color">
+<div class="container-fluid">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+  <ng-container *ngFor="let item of producList">
+
+      <div class="col featured-product product">
+        <div class="card h-100 product-item">
+          <div class="product-image">
+          <img src="{{ item.image }}" class="card-img-top" alt="..." /></div>
+          <div class="card-body">
+            <h1 class="card-title section-header product-title">{{ item.title }}</h1>
+            <div class="product-price">
+            <p><strong>Price:</strong>${{item.price}}</p>
+            </div>
+            <div class="product-action">
+              <a href="#"><i class="fa fa-cart-plus"></i></a>
+              <a href="#"><i class="fa fa-heart"></i></a>
+              <a href="#"><i class="fa fa-search"></i></a>
+          </div>
+            <p class="card-text">{{ item.description }}</p>
+            <button class="btn btn-primary" (click)="addtoCart(item)">Add to cart</button>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+        </div>
+
+    </div>
+  </ng-container>
+</div>
+</div>
+

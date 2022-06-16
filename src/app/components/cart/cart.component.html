@@ -1,0 +1,235 @@
+
+
+
+  <body>
+    <!-- Top bar Start -->
+
+    <!-- Bottom Bar Start -->
+
+    <!-- Bottom Bar End -->
+
+    <!-- Breadcrumb Start -->
+    <div class="breadcrumb-wrap">
+        <div class="container-fluid">
+            <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Products</a></li>
+                <li class="breadcrumb-item active">Cart</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+    <ng-container *ngIf="products.length!=0">
+    <!-- Cart Start -->
+    <div class="cart-page">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="cart-page-inner">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead class="thead-dark">
+                                    <tr  >
+                                      <th>Sr.No</th>
+                                        <th>Product</th>
+                                        <th>Price</th>
+                                        <th>Quantity</th>
+                                        <th>Total</th>
+                                        <th>Remove</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="align-middle">
+                                    <tr *ngFor="let item of products, let i = index">
+                                      <td>
+                                        {{i+1}}
+                                    </td>
+                                      <td>
+                                            <div class="img">
+                                                <a><img src="{{item.image}}" style="width:120px;"></a>
+                                                <p></p>
+                                            </div>
+                                        </td>
+                                        <td>{{item.price}}</td>
+                                        <td>
+
+                                              {{item.quantity}}
+
+                                        </td>
+                                        <td>{{item.price}}</td>
+                                        <td><button (click)="removeProduct(item)"><i class="bi bi-trash-fill"></i></button></td>
+
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="cart-page-inner">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="coupon">
+                                    <input type="text" placeholder="Coupon Code">
+                                    <button>Apply Code</button>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="cart-summary">
+                                    <div class="cart-content">
+                                        <h1>Cart Summary</h1>
+                                        <p>Sub Total<span>{{allProducts}}</span></p>
+                                        <p>Shipping Cost<span>$1</span></p>
+                                        <h2>Grand Total<span>{{allProducts}} </span></h2>
+                                    </div>
+                                    <div class="cart-btn">
+                                        <button>Update Cart</button>
+                                        <button>Checkout</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </ng-container>
+
+    <!-- Cart End -->
+    <ng-container *ngIf="products.length== 0">
+      <div class="container">
+        <div class="card">
+          <h4 class="card-title">My Cart</h4>
+        </div>
+        <div class="center">
+
+          <h5>Your Cart is Empty! <i class="bi bi-emoji-smile-upside-down-fill" style="width:100px;"></i></h5>
+          <h6>Add item to it now</h6>
+          <button class="btn btn-primary"routerLink="/header">Shop Now</button>
+        </div>
+      </div>
+    </ng-container>
+
+
+    <hr/>
+    <!-- Footer Start -->
+    <div class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h2>Get in Touch</h2>
+                        <div class="contact-info">
+                            <p><i class="fa fa-map-marker"></i>123 E Store, Los Angeles, USA</p>
+                            <p><i class="fa fa-envelope"></i>email@example.com</p>
+                            <p><i class="fa fa-phone"></i>+123-456-7890</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h2>Follow Us</h2>
+                        <div class="contact-info">
+                            <div class="social">
+                                <a href=""><i class="fab fa-twitter"></i></a>
+                                <a href=""><i class="fab fa-facebook-f"></i></a>
+                                <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                <a href=""><i class="fab fa-instagram"></i></a>
+                                <a href=""><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h2>Company Info</h2>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms & Condition</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h2>Purchase Info</h2>
+                        <ul>
+                            <li><a href="#">Pyament Policy</a></li>
+                            <li><a href="#">Shipping Policy</a></li>
+                            <li><a href="#">Return Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+                </div>
+            </div>
+
+
+    <!-- Footer End -->
+
+    <!-- Footer Bottom Start -->
+
+    <!-- Footer Bottom End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+
+</body>
+
+
+
+  <!-- <div class="container">
+    <div class="card-table">
+      <div class="card-product">
+        <table class="table table-responsive">
+          <thead>
+            <tr>
+              <th>Sr.No</th>
+              <th>Product Name</th>
+              <th>Product Image</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of products, let i = index">
+              <td>{{i+1}}</td>
+              <td>{{item.title}}</td>
+              <td><img src="{{item.image}}" style="width:120px;"></td>
+              <td>{{item.price}}</td>
+              <td>
+                <div class="content">
+           </div><button type="button" class="btn btn-success btn-sm" (click)="incont(item.id, item.quantity)"><i class="bi bi-plus"></i></button>
+              <span>{{item.quantity}}</span> <button type= "button" class="btn btn-success btn-sm"><i class="bi bi-dash"></i></button>
+              <td>{{item.total}}</td>
+
+              <td>
+                <button (click)="removeProduct(item)" class="btn btn-danger">
+                  <i class="bi bi-trash-fill"></i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="4"></td>
+
+              <td><button type="button" routerLink="/header" class="btn btn-secondary">Shop more</button></td>
+              <td><button type="button" class="btn btn-success">Check out</button></td>
+              <td><strong>Total:{{allProducts}}</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</ng-container>
+--->
